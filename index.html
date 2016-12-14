@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>MMI Asteroids</title>
+    <meta charset="UTF-8">
+    <title>MMI Asteroids</title>
 
-  <style>
-    body { margin: 0 }
-    canvas#game {
-      background: black url('img/fond.jpg');
-      background-size: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-    }
-  </style>
+    <style>
+        body {
+            margin: 0
+        }
+
+        canvas#game {
+            background: black url('img/fond.jpg');
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
 </head>
 <body>
 
-<!-- -->
-<!-- Créer ici le canvas ... -->
-<!-- -->
+<!--Zone de dessin-->
+<canvas id="game">
+
+</canvas>
 
 <!-- Librairie externe pour gérer les sons -->
 <script src="lib/howler.js/howler.js"></script>
 
-<!-- <script src="js/fonctions.js"></script> -->
-<!-- <script src="js/Joueur.js"></script> -->
+<script src="js/fonctions.js"></script>
+<script src="js/Joueur.js"></script>
 <!-- <script src="js/Lasers.js"></script> -->
 <!-- <script src="js/Asteroides.js"></script> -->
 <!-- <script src="js/Interface.js"></script> -->
 <script src="js/app.js"></script>
-<!-- <script src="js/clavier.js"></script> -->
+<script src="js/clavier.js"></script>
 
 
 </body>
