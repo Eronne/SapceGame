@@ -8,6 +8,10 @@ function Joueur(x, y, direction, vitesse) {
     this.image      = graphics['img/avion.png'];
     this.width      = this.image.width;
     this.height     = this.image.height;
+    this.tir        = {
+        intervalle : 250,
+        dernierTir : null
+    }
 }
 
 Joueur.prototype.update = function() {
@@ -40,6 +44,14 @@ Joueur.prototype.update = function() {
         this.y = canvas.height;
     if (this.y > canvas.height) // S'il y a un débordement en bas
         this.y = -this.height;
+
+
+    if (clavier.espace === true && Date.now() - this.tir.dernierTir > this.tir.intervalle) {
+        //Dit au gestionnaire de laser de créer un nouveau laser aux positions du joueur
+        lasers.createOne(this.x, this.y, this.direction);
+        sons.laser.play(); //Son = "pew !"
+        this.tir.dernierTir = Date.now(); //Sauvegarde le moment où l'on a créé le dernier tir (pour calculer les prochains intervalles
+    }
 };
 
 Joueur.prototype.render = function() {
